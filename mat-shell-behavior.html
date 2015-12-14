@@ -1,0 +1,61 @@
+<!--
+@license
+Copyright (c) 2015 The ExpandJS authors. All rights reserved.
+This code may only be used under the BSD style license found at https://expandjs.github.io/LICENSE.txt
+The complete set of authors may be found at https://expandjs.github.io/AUTHORS.txt
+The complete set of contributors may be found at https://expandjs.github.io/CONTRIBUTORS.txt
+-->
+
+<!--
+A behavior used to add wrapping capabilities of [Material Design applications](https://www.google.com/design/spec/layout/structure.html#structure-ui-regions) on a custom element.
+
+@behavior mat-shell-behavior
+@description A behavior used to add wrapping capabilities for Material Design applications on a custom element.
+@keywords material design, expandjs, web app, custom elements, web-components
+@group behaviors
+@hot
+
+@homepage http://expandjs.com/elements/mat-shell-behavior
+@repository https://github.com/ExpandJS/mat-shell-behavior
+
+@behavior mat-paper-behavior /bower_components/mat-paper/mat-paper-behavior.html
+@behavior xp-shell-behavior /bower_components/xp-shell-behavior/xp-shell-behavior.html
+
+@dependency polymer Polymer/polymer#^1.2.0
+@dependency expandjs ExpandJS/expandjs#0.10.0
+@dependency mat-paper ExpandJS/mat-paper#0.10.0
+@dependency xp-shell-behavior ExpandJS/xp-shell-behavior#0.10.0
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../expandjs/expandjs.html">
+<link rel="import" href="../mat-paper/mat-paper-behavior.html">
+<link rel="import" href="../xp-shell-behavior/xp-shell-behavior.html">
+
+<script>
+    Polymer.MatShellBehaviorImp = {
+
+        // PROPERTIES
+        properties: {
+
+            /**
+             * The shell's brightness.
+             *
+             * @attribute brightness
+             * @type string
+             * @default "backdrop"
+             */
+            brightness: {
+                reflectToAttribute: true,
+                type: String,
+                value: 'backdrop'
+            }
+        }
+    };
+
+    Polymer.MatShellBehavior = [
+        Polymer.MatPaperBehavior,
+        Polymer.XPShellBehavior,
+        Polymer.MatShellBehaviorImp
+    ];
+</script>
